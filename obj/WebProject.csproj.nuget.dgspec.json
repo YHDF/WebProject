@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Utente\\Desktop\\EFFICOM\\M1\\dotnet\\WebProject\\Back\\WebProject.csproj": {}
+    "C:\\Users\\Utente\\Desktop\\EFFICOM\\M1\\dotnet\\WebProject\\WebProject.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Utente\\Desktop\\EFFICOM\\M1\\dotnet\\WebProject\\Back\\WebProject.csproj": {
+    "C:\\Users\\Utente\\Desktop\\EFFICOM\\M1\\dotnet\\WebProject\\WebProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Utente\\Desktop\\EFFICOM\\M1\\dotnet\\WebProject\\Back\\WebProject.csproj",
+        "projectUniqueName": "C:\\Users\\Utente\\Desktop\\EFFICOM\\M1\\dotnet\\WebProject\\WebProject.csproj",
         "projectName": "WebProject",
-        "projectPath": "C:\\Users\\Utente\\Desktop\\EFFICOM\\M1\\dotnet\\WebProject\\Back\\WebProject.csproj",
+        "projectPath": "C:\\Users\\Utente\\Desktop\\EFFICOM\\M1\\dotnet\\WebProject\\WebProject.csproj",
         "packagesPath": "C:\\Users\\Utente\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Utente\\Desktop\\EFFICOM\\M1\\dotnet\\WebProject\\Back\\obj\\",
+        "outputPath": "C:\\Users\\Utente\\Desktop\\EFFICOM\\M1\\dotnet\\WebProject\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Utente\\AppData\\Roaming\\NuGet\\NuGet.Config"

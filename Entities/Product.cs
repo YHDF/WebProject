@@ -1,26 +1,20 @@
 using System;
 
-namespace ProductDTOModel
+namespace WebApi.Entities
 {
-    public class ProductDTO
+    public class Product
     {
         // Properties
-        public int ProductDTOId { get; set; }
-
+        public int ProductId { get; set; }
         public string Name { get; set; }
-
         public int Price { get; set; }
-
         public string ImageURL { get; set; }
-
         public string ProductURL { get; set; }
 
-        // Constructors
-        public ProductDTO()
-        {
-        }
-
-        public ProductDTO(string name, int price, string imgUrl, string prodUrl)
+        // Constructor
+        public Product() {}
+        
+        public Product(string name, int price, string imgUrl, string prodUrl)
         {
             Name = name;
             Price = price;

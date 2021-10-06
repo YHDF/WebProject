@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "C/LLF6d+B+QKIVRmFJbJKBol02ROhex1cRciZk8dwudvuwyztnx5MrLEMwvMifY04aQA+uGE2sPkc4XWXRM4+Q==",
+  "dgSpecHash": "U4fEBi7IQwkDxIXMDU2/P4V0JlhBZ5Cx0eyahWe0XFaqBbVPkchb5TJBQRgnxPnBmOJIi4NyrmFUSUbK4fJgGQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Utente\\Desktop\\EFFICOM\\M1\\dotnet\\WebProject\\Back\\WebProject.csproj",
+  "projectFilePath": "C:\\Users\\Utente\\Desktop\\EFFICOM\\M1\\dotnet\\WebProject\\WebProject.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Utente\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Utente\\.nuget\\packages\\microsoft.aspnetcore.cors\\2.2.0\\microsoft.aspnetcore.cors.2.2.0.nupkg.sha512",
