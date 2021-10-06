@@ -1481,19 +1481,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Utente\\.nuget\\packages\\": {}
+    "C:\\Users\\Youness HOUDAIFA\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Utente\\Desktop\\EFFICOM\\M1\\dotnet\\WebProject\\WebProject.csproj",
+      "projectUniqueName": "C:\\Users\\Youness HOUDAIFA\\Desktop\\dontnet\\WebProject\\WebProject.csproj",
       "projectName": "WebProject",
-      "projectPath": "C:\\Users\\Utente\\Desktop\\EFFICOM\\M1\\dotnet\\WebProject\\WebProject.csproj",
-      "packagesPath": "C:\\Users\\Utente\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Utente\\Desktop\\EFFICOM\\M1\\dotnet\\WebProject\\obj\\",
+      "projectPath": "C:\\Users\\Youness HOUDAIFA\\Desktop\\dontnet\\WebProject\\WebProject.csproj",
+      "packagesPath": "C:\\Users\\Youness HOUDAIFA\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Youness HOUDAIFA\\Desktop\\dontnet\\WebProject\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Utente\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Youness HOUDAIFA\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"

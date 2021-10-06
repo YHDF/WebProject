@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using EFTechCommerce.Services;
+using WebApi.Entities;
 
 namespace WebApi.Controllers
 {
@@ -21,28 +22,29 @@ namespace WebApi.Controllers
         }
 
         [HttpGet]
-        public IActionResult FetchData(string searchName)
+        public List<Product> FetchData(string searchName)
         {
+            List<Product> productList = new List<Product>();
+
             using (var db = new TechCommerceContext())
             {
                 var prods = db.Products.OrderBy(order => order.ProductId);
 
-                List<string> strList = new List<string>();
 
                 foreach (var item in prods)
                 {
-                    if(item.Name.Contains(searchName))
+                    if(item.Name.ToLower().Contains(searchName.ToLower()))
                     {
-                        strList.Add(item.Name);
+                        productList.Add(item);
                     }
                 }
 
-                foreach(var s in strList)
-                    Console.WriteLine(s);
+                foreach(var s in productList)
+                    Console.WriteLine(s.Name);
 
                 // Console.WriteLine(prods.Name);
             }
-            return Ok();
+            return productList;
         }
     }
 }
