@@ -27,6 +27,15 @@ namespace WebProject
         public void ConfigureServices(IServiceCollection services)
         {
 
+            services.AddCors(options =>
+                {
+                    options
+                        .AddDefaultPolicy(builder =>
+                            builder
+                                .WithOrigins("https://localhost:5003")
+                                .AllowAnyMethod()
+                                .AllowAnyHeader());
+                });
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
@@ -47,6 +56,8 @@ namespace WebProject
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseCors();
 
             app.UseAuthorization();
 

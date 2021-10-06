@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Utente\\Desktop\\EFFICOM\\M1\\dotnet\\WebProject\\WebProject.csproj": {}
+    "C:\\Users\\Utente\\Desktop\\EFFICOM\\M1\\dotnet\\WebProject\\Back\\WebProject.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Utente\\Desktop\\EFFICOM\\M1\\dotnet\\WebProject\\WebProject.csproj": {
+    "C:\\Users\\Utente\\Desktop\\EFFICOM\\M1\\dotnet\\WebProject\\Back\\WebProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Utente\\Desktop\\EFFICOM\\M1\\dotnet\\WebProject\\WebProject.csproj",
+        "projectUniqueName": "C:\\Users\\Utente\\Desktop\\EFFICOM\\M1\\dotnet\\WebProject\\Back\\WebProject.csproj",
         "projectName": "WebProject",
-        "projectPath": "C:\\Users\\Utente\\Desktop\\EFFICOM\\M1\\dotnet\\WebProject\\WebProject.csproj",
+        "projectPath": "C:\\Users\\Utente\\Desktop\\EFFICOM\\M1\\dotnet\\WebProject\\Back\\WebProject.csproj",
         "packagesPath": "C:\\Users\\Utente\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Utente\\Desktop\\EFFICOM\\M1\\dotnet\\WebProject\\obj\\",
+        "outputPath": "C:\\Users\\Utente\\Desktop\\EFFICOM\\M1\\dotnet\\WebProject\\Back\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Utente\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -38,6 +38,10 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Cors": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
