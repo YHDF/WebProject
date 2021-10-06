@@ -1,24 +1,19 @@
 using System;
 
-namespace UserDTOModel
+namespace WebApi.Entities
 {
-    public class UserDTO
+    public class User
     {
         // Properties
-        public int UserDTOId { get; set; }
-
+        public int UserId { get; set; }
         public string Username { get; set; }
-
         public string Email { get; set; }
-
         public string Password { get; set; }
 
-        // Constructors
-        public UserDTO()
-        {
-        }
-
-        public UserDTO(string username, string email, string pswd)
+        // Constructor
+        public User() {}
+        
+        public User(string username, string email, string pswd)
         {
             Username = username;
             Email = email;
