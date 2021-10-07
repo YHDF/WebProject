@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using WebApi.Services;
 
 namespace WebProject
 {
@@ -26,8 +27,30 @@ namespace WebProject
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // Auth service
+            services.AddTransient<IUserRepository, UserRepository>();
+            services.AddTransient<ITokenService, TokenService>();
+            services
+                .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer(options =>
+                {
+                    options.TokenValidationParameters =
+                        new TokenValidationParameters {
+                            ValidateIssuer = true,
+                            ValidateAudience = true,
+                            ValidateLifetime = true,
+                            ValidateIssuerSigningKey = true,
+                            ValidIssuer = Configuration["Jwt:Issuer"],
+                            ValidAudience = Configuration["Jwt:Issuer"],
+                            IssuerSigningKey =
+                                new SymmetricSecurityKey(Encoding
+                                        .UTF8
+                                        .GetBytes(Configuration["Jwt:Key"]))
+                        };
+                });
 
-            services.AddCors(options =>
+            services
+                .AddCors(options =>
                 {
                     options
                         .AddDefaultPolicy(builder =>
@@ -36,11 +59,18 @@ namespace WebProject
                                 .AllowAnyMethod()
                                 .AllowAnyHeader());
                 });
+
             services.AddControllers();
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "WebProject", Version = "v1" });
-            });
+            services
+                .AddSwaggerGen(c =>
+                {
+                    c
+                        .SwaggerDoc("v1",
+                        new OpenApiInfo {
+                            Title = "WebProject",
+                            Version = "v1"
+                        });
+                });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -50,8 +80,26 @@ namespace WebProject
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "WebProject v1"));
+                app
+                    .UseSwaggerUI(c =>
+                        c
+                            .SwaggerEndpoint("/swagger/v1/swagger.json",
+                            "WebProject v1"));
             }
+
+            app
+                .Use(async (context, next) =>
+                {
+                    var token = context.Session.GetString("Token");
+                    if (!string.IsNullOrEmpty(token))
+                    {
+                        context
+                            .Request
+                            .Headers
+                            .Add("Authorization", "Bearer " + token);
+                    }
+                    await next();
+                });
 
             app.UseHttpsRedirection();
 
@@ -61,10 +109,11 @@ namespace WebProject
 
             app.UseAuthorization();
 
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllers();
-            });
+            app
+                .UseEndpoints(endpoints =>
+                {
+                    endpoints.MapControllers();
+                });
         }
     }
 }
