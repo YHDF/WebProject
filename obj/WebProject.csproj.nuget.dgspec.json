@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Youness HOUDAIFA\\Desktop\\dontnet\\WebProject\\WebProject.csproj": {}
+    "C:\\Users\\Utente\\Desktop\\EFFICOM\\M1\\dotnet\\WebProject\\WebProject.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Youness HOUDAIFA\\Desktop\\dontnet\\WebProject\\WebProject.csproj": {
+    "C:\\Users\\Utente\\Desktop\\EFFICOM\\M1\\dotnet\\WebProject\\WebProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Youness HOUDAIFA\\Desktop\\dontnet\\WebProject\\WebProject.csproj",
+        "projectUniqueName": "C:\\Users\\Utente\\Desktop\\EFFICOM\\M1\\dotnet\\WebProject\\WebProject.csproj",
         "projectName": "WebProject",
-        "projectPath": "C:\\Users\\Youness HOUDAIFA\\Desktop\\dontnet\\WebProject\\WebProject.csproj",
-        "packagesPath": "C:\\Users\\Youness HOUDAIFA\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Youness HOUDAIFA\\Desktop\\dontnet\\WebProject\\obj\\",
+        "projectPath": "C:\\Users\\Utente\\Desktop\\EFFICOM\\M1\\dotnet\\WebProject\\WebProject.csproj",
+        "packagesPath": "C:\\Users\\Utente\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Utente\\Desktop\\EFFICOM\\M1\\dotnet\\WebProject\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Youness HOUDAIFA\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Utente\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -55,6 +55,10 @@
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[5.6.3, )"
+            },
+            "System.Data.SQLite": {
+              "target": "Package",
+              "version": "[1.0.115, )"
             }
           },
           "imports": [

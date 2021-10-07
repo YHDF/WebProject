@@ -2,7 +2,7 @@
 
 namespace WebProject.Migrations
 {
-    public partial class database_v1 : Migration
+    public partial class Adding_Favs : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -12,7 +12,8 @@ namespace WebProject.Migrations
                 {
                     FavouriteId = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    UserId = table.Column<int>(type: "INTEGER", nullable: false),
+                    UserId = table.Column<string>(type: "TEXT", nullable: true),
+                    UserMail = table.Column<string>(type: "TEXT", nullable: true),
                     ProductLink = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
@@ -42,9 +43,9 @@ namespace WebProject.Migrations
                 {
                     UserId = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    Username = table.Column<string>(type: "TEXT", nullable: true),
+                    Username = table.Column<string>(type: "TEXT", nullable: false),
                     Email = table.Column<string>(type: "TEXT", nullable: true),
-                    Password = table.Column<string>(type: "TEXT", nullable: true)
+                    Password = table.Column<string>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {

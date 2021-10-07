@@ -8,8 +8,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace WebProject.Migrations
 {
     [DbContext(typeof(TechCommerceContext))]
-    [Migration("20211006182731_database_v1")]
-    partial class database_v1
+    [Migration("20211007220218_Adding_Favs")]
+    partial class Adding_Favs
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -26,8 +26,11 @@ namespace WebProject.Migrations
                     b.Property<string>("ProductLink")
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("UserId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("UserMail")
+                        .HasColumnType("TEXT");
 
                     b.HasKey("FavouriteId");
 
@@ -67,9 +70,11 @@ namespace WebProject.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Password")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Username")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("UserId");
