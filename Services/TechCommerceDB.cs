@@ -1,20 +1,15 @@
 using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
-using ProductDTOModel;
-using UserDTOModel;
-using FavouriteDTOModel;
+using WebApi.Entities;
 
-namespace EFTechCommerce
+namespace EFTechCommerce.Services
 {
     public class TechCommerceContext : DbContext
     {
-        public DbSet<ProductDTO> Products { get; set; }
-
-        public DbSet<FavouriteDTO> Favourites { get; set; }
-
-        public DbSet<UserDTO> Users { get; set; }
-
+        public DbSet<Product> Products { get; set; }
+        public DbSet<Favourite> Favourites { get; set; }
+        public DbSet<User> Users { get; set; }
         public string DbPath { get; private set; }
 
         public TechCommerceContext()
@@ -31,9 +26,9 @@ namespace EFTechCommerce
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<ProductDTO>().ToTable("Products");
-            modelBuilder.Entity<FavouriteDTO>().ToTable("Favourites");
-            modelBuilder.Entity<UserDTO>().ToTable("Users");
+            modelBuilder.Entity<Product>().ToTable("Products");
+            modelBuilder.Entity<Favourite>().ToTable("Favourites");
+            modelBuilder.Entity<User>().ToTable("Users");
         }
     }
 }

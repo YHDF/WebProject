@@ -4,9 +4,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using EFTechCommerce;
+using EFTechCommerce.Services;
+using WebApi.Entities;
 
-namespace WebProject.Controllers
+namespace WebApi.Controllers
 {
     [ApiController]
     [Route("[controller]")]
@@ -20,39 +21,30 @@ namespace WebProject.Controllers
             _logger = logger;
         }
 
-        // [HttpGet]
-        // public IEnumerable<WeatherForecast> Get()
-        // {
-        //     var rng = new Random();
-        //     return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-        //     {
-        //         Date = DateTime.Now.AddDays(index),
-        //         TemperatureC = rng.Next(-20, 55),
-        //         Summary = Summaries[rng.Next(Summaries.Length)]
-        //     })
-        //     .ToArray();
-        // }
-
         [HttpGet]
-        public IActionResult FetchData(string searchName)
+        public List<Product> FetchData(string searchName)
         {
+            List<Product> productList = new List<Product>();
+
             using (var db = new TechCommerceContext())
             {
-                var prods = db.Products.OrderBy(order => order.ProductDTOId);
+                var prods = db.Products.OrderBy(order => order.ProductId);
 
-                List<string> strList = new List<string>();
 
                 foreach (var item in prods)
                 {
-                    if(item.Name.Contains(searchName))
+                    if(item.Name.ToLower().Contains(searchName.ToLower()))
                     {
-                        strList.Add(item.Name);
+                        productList.Add(item);
                     }
                 }
-                
+
+                foreach(var s in productList)
+                    Console.WriteLine(s.Name);
+
                 // Console.WriteLine(prods.Name);
             }
-            return Ok();
+            return productList;
         }
     }
 }
