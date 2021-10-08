@@ -25,16 +25,10 @@ namespace WebApi.Controllers
 
         [HttpPost]
         [Route("addfav")]
-        public void AddToFavourite(string prodLink, string username) // The username = email (The username is unique)
+        public void AddToFavourite(User user, Product product) // The email is unique
         {
-            // Retrieve the user id from the UserTechCommerce.db
-            //UserDAO usr = new UserDAO();
-            //string usrID = usr.GetUser(username);
-
-            //Add the fav product into the db
-            //ProductDAO prd = new ProductDAO();
-            //prd.AddProductToFavourite(prodLink, usrID, username);
-
+            ProductDAO prodToFav = new ProductDAO();
+            prodToFav.AddProductToFavourite(product.ProductURL, user.Email, product.ImageURL, product.Price);
         }
 
         

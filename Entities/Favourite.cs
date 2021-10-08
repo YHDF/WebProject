@@ -6,9 +6,10 @@ namespace WebApi.Entities
     {
         // Properties
         public int FavouriteId { get; set; }
-        public string UserId { get; set; }
         public string UserMail { get; set; }
         public string ProductLink { get; set; }
+        public string ProductImg { get; set; }
+        public string ProductPrice { get; set; }
 
         // Constructor
         public Favourite() {}
