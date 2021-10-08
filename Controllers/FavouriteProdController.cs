@@ -25,10 +25,10 @@ namespace WebApi.Controllers
 
         [HttpPost]
         [Route("addfav")]
-        public void AddToFavourite(User user, Product product) // The email is unique
+        public void AddToFavourite(Product product) // The email is unique
         {
             ProductDAO prodToFav = new ProductDAO();
-            prodToFav.AddProductToFavourite(product.ProductURL, user.Email, product.ImageURL, product.Price);
+            prodToFav.AddProductToFavourite(product.ProductURL, "kk@gmail.com", product.ImageURL, product.Price);
         }
 
         
