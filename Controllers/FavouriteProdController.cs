@@ -12,7 +12,6 @@ using WebApi.Models;
 namespace WebApi.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
     public class FavouriteProdController : ControllerBase
     {
 

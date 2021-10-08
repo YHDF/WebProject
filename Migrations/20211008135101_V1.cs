@@ -12,9 +12,10 @@ namespace WebProject.Migrations
                 {
                     FavouriteId = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    UserId = table.Column<string>(type: "TEXT", nullable: true),
                     UserMail = table.Column<string>(type: "TEXT", nullable: true),
-                    ProductLink = table.Column<string>(type: "TEXT", nullable: true)
+                    ProductLink = table.Column<string>(type: "TEXT", nullable: true),
+                    ProductImg = table.Column<string>(type: "TEXT", nullable: true),
+                    ProductPrice = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {

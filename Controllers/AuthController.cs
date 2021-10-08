@@ -47,34 +47,35 @@ namespace WebApi.Controllers
             string userMail = userInfo.Email;
             string userPswd = userInfo.Password;
 
-            // Console.WriteLine(userMail);
-            // Console.WriteLine(user.Email);
-            // Console.WriteLine(user.Password);
-            // Console.WriteLine(userPswd);
+            Console.WriteLine(userMail);
+            Console.WriteLine(user.Email);
+            Console.WriteLine(user.Password);
+            Console.WriteLine(userPswd);
             string token = "";
             if (
-                userMail == user.Email && user.Password == userPswd // Check mail & pswd
-            )
+                userMail == user.Email && user.Password == userPswd) // Check mail & pswd
             {
-                token = GenerateToken();
+
+                token = "GeneratedToken";
                 usr.InsertToken (userMail, token);
             }
             User returneduser = new User(userMail, "", token);
             return returneduser;
         }
 
-        [HttpPost]
+        /*[HttpPost]
         [Route("logout")]
         public User Logout(User user)
         {
             UserDAO usr = new UserDAO();
             usr.InsertToken(user.Email, ""); // Destroy the token
-        }
+        }*/
 
         [HttpGet]
         [Route("gettoken")]
         public User GetToken(string email)
         {
+
             UserDAO usr = new UserDAO();
             User userInfo = usr.GetUser(email);
 

@@ -14,11 +14,6 @@ namespace WebApi.Entities
         // Constructor
         public Favourite() {}
         
-        public Favourite(string userId, string userMail, string prodLink)
-        {
-            UserId = userId;
-            UserMail = userMail;
-            ProductLink = prodLink;
-        }
+    
     }
 }

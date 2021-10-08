@@ -5,7 +5,7 @@ namespace WebApi.Models
 {
     public class ProductDAO
     {
-        public void AddProductToFavourite(string prodLink, string userMail, string prodImg, string prodPrice) // Add product link to TechCommerce.db
+        public void AddProductToFavourite(string prodLink, string userMail, string prodImg, int prodPrice) // Add product link to TechCommerce.db
         {
             var folder = Environment.SpecialFolder.LocalApplicationData;
             var path = Environment.GetFolderPath(folder);

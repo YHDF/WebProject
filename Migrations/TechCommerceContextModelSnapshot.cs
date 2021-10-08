@@ -21,10 +21,13 @@ namespace WebProject.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
+                    b.Property<string>("ProductImg")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("ProductLink")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("UserId")
+                    b.Property<string>("ProductPrice")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("UserMail")

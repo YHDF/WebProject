@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace WebProject.Migrations
 {
     [DbContext(typeof(TechCommerceContext))]
-    [Migration("20211008103335_V1")]
+    [Migration("20211008135101_V1")]
     partial class V1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -23,10 +23,13 @@ namespace WebProject.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
+                    b.Property<string>("ProductImg")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("ProductLink")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("UserId")
+                    b.Property<string>("ProductPrice")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("UserMail")
