@@ -3,7 +3,7 @@ using System.Data.SQLite;
 
 namespace WebApi.Models
 {
-    public class ProductDTO
+    public class ProductDAO
     {
         public void AddProductToFavourite(string prodLink, string userId, string userMail) // Add product link to TechCommerce.db
         {

@@ -8,19 +8,25 @@ namespace WebApi.Entities
         // Properties
         public int UserId { get; set; }
         [Required]
-        public string Username { get; set; }
         public string Email { get; set; }
         [Required]
         public string Password { get; set; }
+        public string Token { get; set; }
 
         // Constructor
         public User() {}
 
-        public User(string username, string email, string pswd)
+        public User(string email, string pswd)
         {
-            Username = username;
             Email = email;
             Password = pswd;
+        }
+
+        public User(string email, string pswd, string token)
+        {
+            Email = email;
+            Password = pswd;
+            Token = token;
         }
     }
 }

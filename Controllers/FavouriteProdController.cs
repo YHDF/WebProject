@@ -28,12 +28,12 @@ namespace WebApi.Controllers
         public void AddToFavourite(string prodLink, string username) // The username = email (The username is unique)
         {
             // Retrieve the user id from the UserTechCommerce.db
-            UserDTO usr = new UserDTO();
-            string usrID = usr.GetUser(username);
+            //UserDAO usr = new UserDAO();
+            //string usrID = usr.GetUser(username);
 
             //Add the fav product into the db
-            ProductDTO prd = new ProductDTO();
-            prd.AddProductToFavourite(prodLink, usrID, username);
+            //ProductDAO prd = new ProductDAO();
+            //prd.AddProductToFavourite(prodLink, usrID, username);
 
         }
 

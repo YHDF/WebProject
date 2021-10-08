@@ -8,8 +8,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace WebProject.Migrations
 {
     [DbContext(typeof(TechCommerceContext))]
-    [Migration("20211007220218_Adding_Favs")]
-    partial class Adding_Favs
+    [Migration("20211008103335_V1")]
+    partial class V1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -67,14 +67,14 @@ namespace WebProject.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Email")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Password")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Username")
-                        .IsRequired()
+                    b.Property<string>("Token")
                         .HasColumnType("TEXT");
 
                     b.HasKey("UserId");
