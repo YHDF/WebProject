@@ -22,6 +22,12 @@ namespace WebApi.Entities
             Password = pswd;
         }
 
+                public User(string email, string token)
+        {
+            Email = email;
+            Token = token;
+        }
+
         public User(string email, string pswd, string token)
         {
             Email = email;
