@@ -19,7 +19,7 @@ namespace WebApi.Models
             SQLiteDataReader sqlite_datareader;
             SQLiteCommand sqlite_cmd;
             sqlite_cmd = conn.CreateCommand();
-            sqlite_cmd.CommandText = "SELECT UserId, Email, Password FROM Users WHERE Email = '" + username + "'";
+            sqlite_cmd.CommandText = "SELECT UserId, Email, Password, Token FROM Users WHERE Email = '" + username + "'";
 
             sqlite_datareader = sqlite_cmd.ExecuteReader();
             // string userId = sqlite_datareader.GetString(0);
@@ -28,13 +28,15 @@ namespace WebApi.Models
             int userId = 0;
             string userMail = "";
             string userPswd = "";
+            string userTkn = "";
             while (sqlite_datareader.Read())
             {
                 userId = sqlite_datareader.GetInt32(0);
                 userMail = sqlite_datareader.GetString(1);
                 userPswd = sqlite_datareader.GetString(2);
+                userTkn = sqlite_datareader.GetString(3);
             }
-            User user = new User(userMail, userPswd );
+            User user = new User(userMail, userPswd, userTkn);
             //string[] userInfo = new string[] {userId, userMail, userPswd};
 
             conn.Close();

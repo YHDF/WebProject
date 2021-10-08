@@ -36,25 +36,7 @@ namespace WebApi.Controllers
 // var finalString = new String(stringChars);
 //         }
 
-        [HttpPost]
-        [Route("login")]
-        public void Login(User user)
-        {
-            UserDAO usr = new UserDAO();
-            User userInfo = usr.GetUser(user.Email);
-            string userMail = userInfo.Email;
-            string userPswd = userInfo.Password;
-            Console.WriteLine(userMail);
-            Console.WriteLine(user.Email);
-            Console.WriteLine(user.Password);
-            Console.WriteLine(userPswd);
-            if(userMail == user.Email && user.Password == userPswd) // Check mail & pswd
-            {
-                string token = "test token";
-                usr.InsertToken(userMail, token);
-
-            }
-        }
+    
 
         [HttpPost]
         [Route("login")]
@@ -75,8 +57,20 @@ namespace WebApi.Controllers
                 token = "test token";
                 usr.InsertToken(userMail, token);
             }
+            User returneduser = new User(userMail,  "", token);
+            return returneduser;
+        }
 
-            return new User(userMail, token);
+        [HttpGet]
+        [Route("gettoken")]
+        public User GetToken(string email)
+        {
+
+            UserDAO usr = new UserDAO();
+            User userInfo = usr.GetUser(email);
+
+            Console.WriteLine("this is : " + userInfo.Token);
+            return userInfo;
         }
         
     }
