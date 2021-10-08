@@ -61,6 +61,14 @@ namespace WebApi.Controllers
             return returneduser;
         }
 
+        [HttpPost]
+        [Route("logout")]
+        public User Logout(User user)
+        {
+            UserDAO usr = new UserDAO();
+            usr.InsertToken(user.Email, ""); // Destroy the token
+        }
+
         [HttpGet]
         [Route("gettoken")]
         public User GetToken(string email)
